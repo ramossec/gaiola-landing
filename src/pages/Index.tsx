@@ -1,12 +1,13 @@
 import { Shield, Building, Car, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { ContactFormModal } from "@/components/ContactFormModal";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check system preference on mount
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
@@ -47,9 +48,7 @@ const Index = () => {
                 <Moon className="h-5 w-5 text-gray-700" />
               )}
             </Button>
-            <Button className="bg-secondary hover:bg-secondary/90 text-primary">
-              Fale Conosco
-            </Button>
+            <ContactFormModal />
           </div>
         </div>
       </header>
@@ -153,6 +152,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <WhatsAppButton />
     </div>
   );
 };
