@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -11,7 +11,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/2774afba-8191-4130-a18d-ee9ceb0300e4.png" 
               alt="Gaiola Seguros" 
-              className="h-12"
+              className="h-16 rounded-lg"
             />
           </div>
           <nav className="hidden md:flex gap-6">
