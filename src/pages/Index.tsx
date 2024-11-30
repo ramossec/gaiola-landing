@@ -7,12 +7,18 @@ const Index = () => {
       {/* Header */}
       <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary">Gaiola Seguros</h1>
+          <div className="flex items-center gap-2">
+            <img 
+              src="/lovable-uploads/2774afba-8191-4130-a18d-ee9ceb0300e4.png" 
+              alt="Gaiola Seguros" 
+              className="h-12"
+            />
+          </div>
           <nav className="hidden md:flex gap-6">
-            <a href="#servicos" className="text-gray-600 hover:text-primary transition-colors">Serviços</a>
-            <a href="#contato" className="text-gray-600 hover:text-primary transition-colors">Contato</a>
+            <a href="#servicos" className="text-primary hover:text-secondary transition-colors">Serviços</a>
+            <a href="#contato" className="text-primary hover:text-secondary transition-colors">Contato</a>
           </nav>
-          <Button className="bg-secondary hover:bg-secondary/90">
+          <Button className="bg-secondary hover:bg-secondary/90 text-primary">
             Fale Conosco
           </Button>
         </div>
@@ -28,10 +34,10 @@ const Index = () => {
             Soluções completas em seguros e consórcios para sua tranquilidade e realização dos seus sonhos.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button className="bg-secondary hover:bg-secondary/90 text-lg px-8">
+            <Button className="bg-secondary hover:bg-secondary/90 text-primary text-lg px-8">
               Solicitar Cotação
             </Button>
-            <Button variant="outline" className="text-lg px-8">
+            <Button variant="outline" className="text-lg px-8 border-secondary text-secondary hover:bg-secondary/10">
               Saiba Mais
             </Button>
           </div>
@@ -47,21 +53,21 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <Shield className="w-12 h-12 mx-auto mb-6 text-secondary" />
-              <h4 className="text-xl font-semibold mb-4">Corretagem de Seguro</h4>
+              <h4 className="text-xl font-semibold mb-4 text-primary">Corretagem de Seguro</h4>
               <p className="text-gray-600">
                 Proteção completa para você, sua família e seu patrimônio com as melhores seguradoras.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <Building className="w-12 h-12 mx-auto mb-6 text-secondary" />
-              <h4 className="text-xl font-semibold mb-4">Consórcio Imobiliário</h4>
+              <h4 className="text-xl font-semibold mb-4 text-primary">Consórcio Imobiliário</h4>
               <p className="text-gray-600">
                 Realize o sonho da casa própria com as melhores condições do mercado.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <Car className="w-12 h-12 mx-auto mb-6 text-secondary" />
-              <h4 className="text-xl font-semibold mb-4">Consórcio Automobilístico</h4>
+              <h4 className="text-xl font-semibold mb-4 text-primary">Consórcio Automobilístico</h4>
               <p className="text-gray-600">
                 Planejamento inteligente para a conquista do seu veículo.
               </p>
@@ -80,7 +86,7 @@ const Index = () => {
             <p className="text-xl text-gray-600 mb-8">
               Entre em contato conosco para uma consultoria personalizada e descubra as melhores opções para você.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-lg px-8">
+            <Button className="bg-secondary hover:bg-secondary/90 text-primary text-lg px-8">
               Agendar Conversa
             </Button>
           </div>
