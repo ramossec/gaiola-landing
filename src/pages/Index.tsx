@@ -5,7 +5,7 @@ import { ContactFormModal } from "@/components/ContactFormModal";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -20,16 +20,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
       {/* Header */}
-      <header className="fixed w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm z-50 border-b dark:border-gray-700">
+      <header className="fixed w-full bg-white/90 dark:bg-gray-950 backdrop-blur-sm z-50 border-b dark:border-black">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/2774afba-8191-4130-a18d-ee9ceb0300e4.png" 
+              src="/lovable-uploads/logo.png" 
               alt="Gaiola Seguros" 
-              className="h-16 rounded-lg"
+              className="max-h-20 rounded-lg"
             />
+            <h1 className="text-lg md:text-4xl font-bold text-gray-800 dark:text-secondary">Gaiola Seguros</h1>
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#servicos" className="text-primary dark:text-white hover:text-secondary transition-colors">Serviços</a>
@@ -48,7 +49,7 @@ const Index = () => {
                 <Moon className="h-5 w-5 text-gray-700" />
               )}
             </Button>
-            <ContactFormModal />
+            <ContactFormModal value={'Fale Conosco'} />
           </div>
         </div>
       </header>
@@ -74,27 +75,30 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="servicos" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="servicos" className="py-20 bg-gray-50 dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <h3 className="text-3xl font-bold text-center text-primary dark:text-white mb-16">
             Nossos Serviços
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center
+            transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <Shield className="w-12 h-12 mx-auto mb-6 text-secondary" />
               <h4 className="text-xl font-semibold mb-4 text-primary dark:text-white">Corretagem de Seguro</h4>
               <p className="text-gray-600 dark:text-gray-300">
                 Proteção completa para você, sua família e seu patrimônio com as melhores seguradoras.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center
+            transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <Building className="w-12 h-12 mx-auto mb-6 text-secondary" />
               <h4 className="text-xl font-semibold mb-4 text-primary dark:text-white">Consórcio Imobiliário</h4>
               <p className="text-gray-600 dark:text-gray-300">
                 Realize o sonho da casa própria com as melhores condições do mercado.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center
+            transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <Car className="w-12 h-12 mx-auto mb-6 text-secondary" />
               <h4 className="text-xl font-semibold mb-4 text-primary dark:text-white">Consórcio Automobilístico</h4>
               <p className="text-gray-600 dark:text-gray-300">
@@ -106,7 +110,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contato" className="py-20 dark:bg-gray-900">
+      <section id="contato" className="py-20 dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-3xl font-bold text-primary dark:text-white mb-8">
@@ -115,9 +119,10 @@ const Index = () => {
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Entre em contato conosco para uma consultoria personalizada e descubra as melhores opções para você.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-primary text-lg px-8">
+            <ContactFormModal value={'Agendar Conversa'} />
+            {/* <Button className="bg-secondary hover:bg-secondary/90 text-primary text-lg px-8">
               Agendar Conversa
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
-export function ContactFormModal() {
+export function ContactFormModal({value}) {
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ export function ContactFormModal() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="bg-secondary hover:bg-secondary/90 text-primary">
-          Fale Conosco
+          {value}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
