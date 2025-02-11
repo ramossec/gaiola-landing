@@ -1,3 +1,4 @@
+
 import { Shield, Building, Car, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
@@ -125,6 +126,30 @@ const Index = () => {
                       </h2>
                       <p className="text-xl text-white/90 mb-8">
                         Proteção completa para seu lar e sua família
+                      </p>
+                      <Button className="bg-secondary hover:bg-secondary/90 text-primary">
+                        Fazer Cotação
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <div className="relative h-[500px] w-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80" 
+                  alt="Banner Seguro Automotivo"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent">
+                  <div className="container mx-auto h-full flex items-center px-4">
+                    <div className="max-w-xl">
+                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Seguro Automotivo
+                      </h2>
+                      <p className="text-xl text-white/90 mb-8">
+                        Proteção completa para seu veículo em qualquer situação
                       </p>
                       <Button className="bg-secondary hover:bg-secondary/90 text-primary">
                         Fazer Cotação
