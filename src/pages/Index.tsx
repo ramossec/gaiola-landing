@@ -1,17 +1,22 @@
+
 import { Shield, Building, Car, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { ContactFormModal } from "@/components/ContactFormModal";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleTheme = () => {
@@ -20,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+    <div className="min-h-screen bg-black dark:bg-gray-900 transition-colors duration-200">
       {/* Header */}
       <header className="fixed w-full bg-white/90 dark:bg-gray-950 backdrop-blur-sm z-50 border-b dark:border-black">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -63,6 +68,62 @@ const Index = () => {
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Soluções completas em seguros e consórcios para sua tranquilidade e realização dos seus sonhos.
           </p>
+          
+          {/* Carousel Section */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <Carousel className="w-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" 
+                        alt="Seguro Empresarial"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 className="text-white text-2xl font-bold">Seguro Empresarial</h3>
+                        <p className="text-white/90">Proteja seu negócio com as melhores coberturas</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1523676060187-f55189a71f5e?w=800&q=80" 
+                        alt="Seguro Residencial"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 className="text-white text-2xl font-bold">Seguro Residencial</h3>
+                        <p className="text-white/90">Seu lar protegido contra imprevistos</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" 
+                        alt="Seguro Automotivo"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <h3 className="text-white text-2xl font-bold">Seguro Automotivo</h3>
+                        <p className="text-white/90">Tranquilidade para suas viagens</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </div>
+
           <div className="flex gap-4 justify-center">
             <Button className="bg-secondary hover:bg-secondary/90 text-primary text-lg px-8">
               Solicitar Cotação
