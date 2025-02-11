@@ -1,4 +1,3 @@
-
 import { Shield, Building, Car, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
@@ -58,6 +57,88 @@ const Index = () => {
           </div>
         </div>
       </header>
+
+      {/* Banner Carousel */}
+      <section className="pt-24">
+        <Carousel className="w-full">
+          <CarouselContent>
+            <CarouselItem>
+              <div className="relative h-[500px] w-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80" 
+                  alt="Banner Seguro Vida"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent">
+                  <div className="container mx-auto h-full flex items-center px-4">
+                    <div className="max-w-xl">
+                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Seguro de Vida
+                      </h2>
+                      <p className="text-xl text-white/90 mb-8">
+                        Proteja o futuro de quem você ama com as melhores coberturas
+                      </p>
+                      <Button className="bg-secondary hover:bg-secondary/90 text-primary">
+                        Saiba Mais
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <div className="relative h-[500px] w-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=1600&q=80" 
+                  alt="Banner Seguro Saúde"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent">
+                  <div className="container mx-auto h-full flex items-center px-4">
+                    <div className="max-w-xl">
+                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Seguro Saúde
+                      </h2>
+                      <p className="text-xl text-white/90 mb-8">
+                        Cuide da sua saúde com os melhores planos do mercado
+                      </p>
+                      <Button className="bg-secondary hover:bg-secondary/90 text-primary">
+                        Conheça os Planos
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <div className="relative h-[500px] w-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80" 
+                  alt="Banner Seguro Residencial"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent">
+                  <div className="container mx-auto h-full flex items-center px-4">
+                    <div className="max-w-xl">
+                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Seguro Residencial
+                      </h2>
+                      <p className="text-xl text-white/90 mb-8">
+                        Proteção completa para seu lar e sua família
+                      </p>
+                      <Button className="bg-secondary hover:bg-secondary/90 text-primary">
+                        Fazer Cotação
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="left-4" />
+          <CarouselNext className="right-4" />
+        </Carousel>
+      </section>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
