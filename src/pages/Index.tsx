@@ -11,9 +11,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { Card } from "@/components/ui/card";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(true);
+  const [api, setApi] = useState();
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -61,7 +65,19 @@ const Index = () => {
 
       {/* Banner Carousel */}
       <section className="pt-24">
-        <Carousel className="w-full">
+        <Carousel 
+          className="w-full"
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }),
+          ]}
+          setApi={setApi}
+          onSelect={(api) => setCurrent(api.selectedScrollSnap())}
+          opts={{
+            loop: true,
+          }}
+        >
           <CarouselContent>
             <CarouselItem>
               <div className="relative h-[500px] w-full">
@@ -162,6 +178,19 @@ const Index = () => {
           </CarouselContent>
           <CarouselPrevious className="left-4" />
           <CarouselNext className="right-4" />
+          <div className="absolute bottom-4 left-0 right-0">
+            <div className="flex justify-center gap-2">
+              {[...Array(4)].map((_, i) => (
+                <button
+                  key={i}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    current === i ? 'bg-white' : 'bg-white/50'
+                  }`}
+                  onClick={() => api?.scrollTo(i)}
+                />
+              ))}
+            </div>
+          </div>
         </Carousel>
       </section>
 
